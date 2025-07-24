@@ -1,0 +1,38 @@
+
+	
+<!--////////////////////////////////////Container-->
+<section id="container" class="sub-page">
+	<div class="wrap-container zerogrid">
+		<div class="crumbs">
+			<ul>
+				<% galleryData.breadcrumbsNav.forEach((item) => { %>
+
+				<li><a href="<%= item.href %>"><%= item.name %></a></li>
+
+				<% }) %>
+			</ul>
+		</div>
+		<div id="main-content">
+			<div class="wrap-content">
+				<div class="row">
+
+					<% galleryData.galleryStore.forEach((item) => { %>
+
+					<div class="col-1-4">
+						<div class="zoom-container">
+							<a target="_blank" href="<%= item.href %>">
+								<span class="zoom-caption">
+									<span><%= item.name %></span>
+								</span>
+								<img src="<%= item.image %>" />
+							</a>
+						</div>
+					</div>
+
+					<% }) %>
+
+				</div>
+			</div>
+		</div> 
+	</div>
+</section>

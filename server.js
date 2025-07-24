@@ -1,7 +1,10 @@
 import express from 'express';
 import color from 'colors';
 import dotenv from 'dotenv';
-import path, {resolve} from 'path';
+import pageRouter from './routes/pageRoutes.js';
+import expressEJSLayout from 'express-ejs-layouts';
+import { headerData } from './data/headerData.js';
+import { footerData } from './data/footerData.js';
 
 // config env
 dotenv.config();
@@ -12,38 +15,25 @@ const PORT = process.env.PORT || 9090;
 // init app
 const app = express();
 
-// support
+// init support
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(expressEJSLayout);
+
+// set EJS support
+app.set('view engine', 'ejs');
+
+
+//global header & footer data
+app.use((req, res, next)=>{
+      res.locals.headerData = headerData;
+      res.locals.footerData = footerData
+    next()
+})
+
 
 // routing
-app.get("/staff", (req, res) => {
-  res.sendFile(path.join(resolve(), '/public/staff.html'));
-});
-
-app.get("/menu", (req, res) => {
-  res.sendFile(path.join(resolve(), '/public/menu.html'));
-});
-
-app.get("/gallery", (req, res) => {
-  res.sendFile(path.join(resolve(), '/public/gallery.html'));
-});
-
-app.get("/location", (req, res) => {
-  res.sendFile(path.join(resolve(), '/public/location.html'));
-});
-
-app.get("/archive", (req, res) => {
-  res.sendFile(path.join(resolve(), '/public/archive.html'));
-});
-
-app.get("/news", (req, res) => {
-  res.sendFile(path.join(resolve(), '/public/news.html'));
-});
-
-app.get("/reservation", (req, res) => {
-  res.sendFile(path.join(resolve(), '/public/reservation.html'));
-});
+app.use(pageRouter);
 
 // static folder
 app.use(express.static('public'));

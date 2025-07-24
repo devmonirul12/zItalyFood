@@ -393,4 +393,9 @@ a.button.bt2 {}
 }
 .zoom-container:hover .zoom-caption {
 	background: none;
-}		
+}	
+
+/* add new custom css */
+.location-wrap-col span {
+    text-transform: uppercase;
+}
