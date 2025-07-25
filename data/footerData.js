@@ -1,7 +1,7 @@
 export const footerData = {
     author: {
         name: "Monirul Islam",
-        designation: "Software Engineer",
+        designation: "Full-Stack Software Engineer",
         desc: "A passionate software engineer with a love for coding and problem-solving.",
         image: "https://i.postimg.cc/jSX9J9LJ/monirul.png",
     },
