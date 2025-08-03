@@ -2,7 +2,7 @@ export const footerData = {
     author: {
         name: "Monirul Islam",
         designation: "Full-Stack Software Engineer",
-        desc: "A passionate software engineer with a love for coding and problem-solving.",
+        desc: "Pellentesque elementum leo et justo dapibus convalli. In justo nibh, congue nec dapibus ac, placerat eget sem. Nunc consequat felis non elit ultricies in varius massa laoreet. Aenean lectus nisl, ellentesque in fermentum sit amet, convallis a lorem condimentum mollis. Aenean lectus nisl, ellentesque in fermentum sit amet.",
         image: "https://i.postimg.cc/jSX9J9LJ/monirul.png",
     },
     location: {
